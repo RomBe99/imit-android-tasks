@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android Tasks</string>
+    <string name="cat_greeting">Hi, %s!</string>
+    <string name="crow_counter_text_button">+1 ворона</string>
 </resources>
