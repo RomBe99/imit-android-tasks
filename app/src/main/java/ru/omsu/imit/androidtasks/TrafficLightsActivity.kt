@@ -23,5 +23,7 @@ class TrafficLightsActivity : AppCompatActivity() {
             trafficLightsStatusTextView.text = getString(R.string.green)
             trafficLightsLayout.setBackgroundColor(getColor(R.color.green))
         }
+
+        enteredNameTextView.text = intent.extras?.getString(SECRET_kEY_FOR_NAME) ?: ""
     }
 }
