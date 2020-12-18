@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         crowCountButton.setOnClickListener {
-            crowCountTextView.text = "Я насчитал ${++crowCount} Ворон"
+            crowCountTextView.text = getString(R.string.crow_count_format_str).format(++crowCount)
         }
     }
 }
