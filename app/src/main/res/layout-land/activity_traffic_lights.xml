@@ -10,13 +10,13 @@
         android:id="@+id/trafficLightsStatusTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:text="@string/traffic_lights_off"
         android:textColor="@color/black"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vButtonsContainer" />
+        app:layout_constraintTop_toBottomOf="@+id/hButtonsContainer" />
 
     <TextView
         android:id="@+id/enteredNameTextView"
@@ -30,11 +30,11 @@
         app:layout_constraintTop_toBottomOf="@+id/trafficLightsStatusTextView" />
 
     <LinearLayout
-        android:id="@+id/vButtonsContainer"
+        android:id="@+id/hButtonsContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="100dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -44,26 +44,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/red"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="100dp" />
+            tools:layout_editor_absoluteX="128dp"
+            tools:layout_editor_absoluteY="181dp" />
 
         <Button
             android:id="@+id/yellowButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginStart="50dp"
             android:text="@string/yellow"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="204dp" />
+            tools:layout_editor_absoluteX="309dp"
+            tools:layout_editor_absoluteY="213dp" />
 
         <Button
             android:id="@+id/greenButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginStart="50dp"
             android:text="@string/green"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="304dp" />
+            tools:layout_editor_absoluteX="495dp"
+            tools:layout_editor_absoluteY="194dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

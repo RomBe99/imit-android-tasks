@@ -7,6 +7,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 const val SECRET_kEY_FOR_NAME = "ru.omsu.imit.androidtasks.SECRET_kEY"
 
+private const val KEY_CROW_COUNT = "CROW_COUNT"
+
 class MainActivity : AppCompatActivity() {
     private var crowCount = 0
     private var name = ""
@@ -34,5 +36,16 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
+
+        if (savedInstanceState != null) {
+            crowCount = savedInstanceState.getInt(KEY_CROW_COUNT)
+            crowCountTextView.text = getString(R.string.crow_count_format_str).format(crowCount)
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.putInt(KEY_CROW_COUNT, crowCount)
     }
 }

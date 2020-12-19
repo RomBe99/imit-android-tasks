@@ -2,11 +2,11 @@
     <string name="app_name">Android Tasks</string>
     <string name="cat_greeting">Hi, %s!</string>
     <string name="crow_count_format_str">Crow count %d</string>
-    <string name="crow_counter_button_text">+1 ворона</string>
-    <string name="red">Красный</string>
-    <string name="yellow">Жёлтый</string>
-    <string name="green">Зелёный</string>
-    <string name="traffic_lights_off">Светофор выключен</string>
+    <string name="crow_counter_button_text">+1 crow</string>
+    <string name="red">Red</string>
+    <string name="yellow">Yellow</string>
+    <string name="green">Green</string>
+    <string name="traffic_lights_off">Traffic lights off</string>
     <string name="to_traffic_lights_button_text">To traffic lights</string>
     <string name="enter_your_name_hint">Enter your name</string>
 </resources>
