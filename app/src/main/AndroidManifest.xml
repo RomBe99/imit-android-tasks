@@ -17,6 +17,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".TrafficLightsActivity"/>
+        <activity
+            android:name=".AboutPassengerActivity"
+            android:label="@string/the_passenger"
+            android:theme="@style/PassengerDialog"/>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

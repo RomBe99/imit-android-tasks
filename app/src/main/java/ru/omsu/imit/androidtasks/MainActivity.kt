@@ -37,6 +37,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        thePassengerButton.setOnClickListener {
+            val intent = Intent(this, AboutPassengerActivity::class.java)
+
+            startActivity(intent)
+        }
+
         if (savedInstanceState != null) {
             crowCount = savedInstanceState.getInt(KEY_CROW_COUNT)
             crowCountTextView.text = getString(R.string.crow_count_format_str).format(crowCount)
