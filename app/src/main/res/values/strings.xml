@@ -11,4 +11,5 @@
     <string name="enter_your_name_hint">Enter your name</string>
     <string name="about_passenger">I am a passenger\nAnd I ride, and I ride\nI ride through the city\'s backsides\nI see the stars come out of the sky\nYeah, they\'re bright in a hollow sky\nYou know it looks so good tonight</string>
     <string name="the_passenger">The Passenger</string>
+    <string name="app_greeting">Welcome to my awesome app!</string>
 </resources>
