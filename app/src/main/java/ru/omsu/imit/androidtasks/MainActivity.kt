@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -22,29 +24,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         mysteryCatImageButton.setOnClickListener {
-            name = if (enterNameEditText.text.isEmpty()) "stranger" else enterNameEditText.text.toString()
+            name = with(enterNameEditText.text) { if (isEmpty()) "stranger" else toString() }
 
             greetingTextView.text = getString(R.string.cat_greeting).format(name)
         }
 
         crowCountButton.setOnClickListener {
             crowCountTextView.text = getString(R.string.crow_count_format_str).format(++crowCount)
-        }
-
-        toTrafficLightsButton.setOnClickListener {
-            val intent = Intent(this, TrafficLightsActivity::class.java).apply {
-                if (name.isNotEmpty()) {
-                    putExtra(SECRET_kEY_FOR_NAME, name)
-                }
-            }
-
-            startActivity(intent)
-        }
-
-        thePassengerButton.setOnClickListener {
-            val intent = Intent(this, AboutPassengerActivity::class.java)
-
-            startActivity(intent)
         }
 
         if (savedInstanceState != null) {
@@ -58,15 +44,48 @@ class MainActivity : AppCompatActivity() {
 
 //  Create toast in program (Use custom toasts considered bad practice)
 
-        Toast.makeText(applicationContext, R.string.app_greeting, Toast.LENGTH_LONG).apply {
-            setGravity(Gravity.CENTER, 0, 0)
-            (view as LinearLayout).addView(toastImg, 0)
-        }.show()
+        if (savedInstanceState == null) {
+            Toast.makeText(applicationContext, R.string.app_greeting, Toast.LENGTH_LONG).apply {
+                setGravity(Gravity.CENTER, 0, 0)
+                (view as LinearLayout).addView(toastImg, 0)
+            }.show()
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
         outState.putInt(KEY_CROW_COUNT, crowCount)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.action_the_passenger -> {
+                val intent = Intent(this, AboutPassengerActivity::class.java)
+
+                startActivity(intent)
+
+                return true
+            }
+            R.id.action_to_traffic_lights -> {
+                val intent = Intent(this, TrafficLightsActivity::class.java).apply {
+                    if (name.isNotEmpty()) {
+                        putExtra(SECRET_kEY_FOR_NAME, name)
+                    }
+                }
+
+                startActivity(intent)
+
+                return true
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }
