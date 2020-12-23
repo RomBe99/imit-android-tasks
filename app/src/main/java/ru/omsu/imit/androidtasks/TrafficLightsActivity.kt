@@ -33,32 +33,31 @@ class TrafficLightsActivity : AppCompatActivity() {
         greenButton.setOnClickListener { greenListener.invoke() }
 
         trafficLightsMenu.setOnClickListener {
-            val menu = PopupMenu(this, it)
-            menu.inflate(R.menu.menu_traffic_lights)
+            PopupMenu(this, it).apply {
+                inflate(R.menu.menu_traffic_lights)
 
-            menu.setOnMenuItemClickListener { menuItem ->
-                when (menuItem.itemId) {
-                    R.id.redTrafficLightsMenuItem -> {
-                        redListener.invoke()
+                setOnMenuItemClickListener { menuItem ->
+                    when (menuItem.itemId) {
+                        R.id.redTrafficLightsMenuItem -> {
+                            redListener.invoke()
 
-                        true
+                            true
+                        }
+                        R.id.yellowTrafficLightsMenuItem -> {
+                            yellowListener.invoke()
+
+                            true
+                        }
+                        R.id.greenTrafficLightsMenuItem -> {
+                            greenListener.invoke()
+
+                            true
+                        }
+
+                        else -> false
                     }
-                    R.id.yellowTrafficLightsMenuItem -> {
-                        yellowListener.invoke()
-
-                        true
-                    }
-                    R.id.greenTrafficLightsMenuItem -> {
-                        greenListener.invoke()
-
-                        true
-                    }
-
-                    else -> false
                 }
-            }
-
-            menu.show()
+            }.show()
         }
 
         enteredNameTextView.text = intent.extras?.getString(SECRET_kEY_FOR_NAME) ?: ""
