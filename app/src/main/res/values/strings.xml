@@ -13,4 +13,5 @@
     <string name="app_greeting">Welcome to my awesome app!</string>
     <string name="action_passenger">@string/the_passenger</string>
     <string name="action_to_traffic_lights">To traffic lights</string>
+    <string name="show_menu">Show menu</string>
 </resources>

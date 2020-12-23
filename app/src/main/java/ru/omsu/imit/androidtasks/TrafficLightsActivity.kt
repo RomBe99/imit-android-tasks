@@ -2,6 +2,7 @@ package ru.omsu.imit.androidtasks
 
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_traffic_lights.*
 
@@ -12,19 +13,52 @@ class TrafficLightsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_traffic_lights)
 
-        redButton.setOnClickListener {
+        val redListener = {
             trafficLightsStatusTextView.text = getString(R.string.red)
             trafficLightsLayout.setBackgroundColor(getColor(R.color.red))
         }
 
-        yellowButton.setOnClickListener {
+        val yellowListener = {
             trafficLightsStatusTextView.text = getString(R.string.yellow)
             trafficLightsLayout.setBackgroundColor(getColor(R.color.yellow))
         }
 
-        greenButton.setOnClickListener {
+        val greenListener = {
             trafficLightsStatusTextView.text = getString(R.string.green)
             trafficLightsLayout.setBackgroundColor(getColor(R.color.green))
+        }
+
+        redButton.setOnClickListener { redListener.invoke() }
+        yellowButton.setOnClickListener { yellowListener.invoke() }
+        greenButton.setOnClickListener { greenListener.invoke() }
+
+        trafficLightsMenu.setOnClickListener {
+            val menu = PopupMenu(this, it)
+            menu.inflate(R.menu.menu_traffic_lights)
+
+            menu.setOnMenuItemClickListener { menuItem ->
+                when (menuItem.itemId) {
+                    R.id.redTrafficLightsMenuItem -> {
+                        redListener.invoke()
+
+                        true
+                    }
+                    R.id.yellowTrafficLightsMenuItem -> {
+                        yellowListener.invoke()
+
+                        true
+                    }
+                    R.id.greenTrafficLightsMenuItem -> {
+                        greenListener.invoke()
+
+                        true
+                    }
+
+                    else -> false
+                }
+            }
+
+            menu.show()
         }
 
         enteredNameTextView.text = intent.extras?.getString(SECRET_kEY_FOR_NAME) ?: ""

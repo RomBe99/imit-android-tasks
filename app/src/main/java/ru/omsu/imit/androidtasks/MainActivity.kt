@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.action_the_passenger -> {
                 val intent = Intent(this, AboutPassengerActivity::class.java)
 
