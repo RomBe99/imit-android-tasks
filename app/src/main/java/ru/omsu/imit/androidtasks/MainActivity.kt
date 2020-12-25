@@ -1,5 +1,6 @@
 package ru.omsu.imit.androidtasks
 
+import android.app.AlertDialog
 import android.app.PendingIntent
 import android.content.Intent
 import android.graphics.BitmapFactory
@@ -27,18 +28,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun onExitNotification() {
         val nIntent = Intent(this, AboutPassengerActivity::class.java)
-        val contentIntent = PendingIntent.getActivity(this, 0, nIntent, PendingIntent.FLAG_CANCEL_CURRENT)
+        val contentIntent =
+            PendingIntent.getActivity(this, 0, nIntent, PendingIntent.FLAG_CANCEL_CURRENT)
 
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setLargeIcon(BitmapFactory.decodeResource(resources, R.drawable.ic_passeger))
-                .setContentTitle(getString(R.string.the_passenger))
-                .setContentText(getString(R.string.passenger_notification_text))
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setContentIntent(contentIntent)
-                .setVibrate(longArrayOf(500, 500, 500))
-                .setAutoCancel(true)
-                .build()
+            .setSmallIcon(R.mipmap.ic_launcher)
+            .setLargeIcon(BitmapFactory.decodeResource(resources, R.drawable.ic_passeger))
+            .setContentTitle(getString(R.string.the_passenger))
+            .setContentText(getString(R.string.passenger_notification_text))
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setContentIntent(contentIntent)
+            .setVibrate(longArrayOf(500, 500, 500))
+            .setAutoCancel(true)
+            .build()
 
         NotificationManagerCompat.from(this).notify(PASSENGER_NOTIFY_ID, notification)
     }
@@ -55,12 +57,20 @@ class MainActivity : AppCompatActivity() {
         }.show()
     }
 
+    private fun openQuitDialog() {
+        AlertDialog.Builder(this).apply {
+            setTitle(getString(R.string.quit_confirm))
+            setPositiveButton(getString(R.string.yes)) { _, _ -> finish() }
+            setNegativeButton(getString(R.string.no)) { _, _ -> }
+        }.show()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         mysteryCatImageButton.setOnClickListener {
-            name = with(enterNameEditText.text) { if (isEmpty()) "stranger" else toString() }
+            name = with(enterNameEditText.text) { if (isEmpty()) getString(R.string.stranger) else toString() }
 
             greetingTextView.text = getString(R.string.cat_greeting).format(name)
         }
@@ -118,6 +128,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onBackPressed() {
+        openQuitDialog()
     }
 
     override fun onStop() {

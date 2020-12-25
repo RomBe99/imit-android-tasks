@@ -16,4 +16,8 @@
     <string name="show_menu">Show menu</string>
     <string name="passenger_notification_text">The Passenger waiting you!</string>
     <string name="action_to_converter">To converter</string>
+    <string name="quit_confirm">Do you really want to leave?</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="stranger">stranger</string>
 </resources>
