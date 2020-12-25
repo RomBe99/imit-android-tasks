@@ -95,7 +95,6 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.action_the_passenger -> {
                 val intent = Intent(this, AboutPassengerActivity::class.java)
-
                 startActivity(intent)
 
                 return true
@@ -106,7 +105,12 @@ class MainActivity : AppCompatActivity() {
                         putExtra(SECRET_kEY_FOR_NAME, name)
                     }
                 }
+                startActivity(intent)
 
+                return true
+            }
+            R.id.action_to_converter -> {
+                val intent = Intent(this, ConverterActivity::class.java)
                 startActivity(intent)
 
                 return true

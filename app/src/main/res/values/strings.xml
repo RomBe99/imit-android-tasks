@@ -15,4 +15,5 @@
     <string name="action_to_traffic_lights">To traffic lights</string>
     <string name="show_menu">Show menu</string>
     <string name="passenger_notification_text">The Passenger waiting you!</string>
+    <string name="action_to_converter">To converter</string>
 </resources>

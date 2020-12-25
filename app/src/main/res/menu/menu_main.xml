@@ -8,11 +8,17 @@
         android:id="@+id/action_the_passenger"
         android:orderInCategory="100"
         android:title="@string/action_passenger"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/action_to_traffic_lights"
         android:orderInCategory="100"
         android:title="@string/action_to_traffic_lights"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_to_converter"
+        android:orderInCategory="100"
+        android:title="@string/action_to_converter"
+        app:showAsAction="never" />
 </menu>
