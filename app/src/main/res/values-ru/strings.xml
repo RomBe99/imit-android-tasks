@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Задания по Android</string>
+    <string name="meter">метр</string>
+    <string name="parrot">попугай</string>
+    <string name="convert">конвертировать</string>
+    <string name="empty_value">Введённое значение пусто</string>
+    <string name="cat_greeting">Привет, %s!</string>
+    <string name="crow_count_format_str">Количество ворон %d</string>
+    <string name="crow_counter_button_text">+1 ворона</string>
+    <string name="red">Красный</string>
+    <string name="yellow">Жёлтый</string>
+    <string name="green">Зелёный</string>
+    <string name="traffic_lights_off">Светофор выключен</string>
+    <string name="enter_your_name_hint">Введите своё имя</string>
+    <string name="the_passenger">Пассажир</string>
+    <string name="app_greeting">Добро пожаловать в моё крутейшее приложение!</string>
+    <string name="action_to_traffic_lights">К светофору</string>
+    <string name="show_menu">Показать меню</string>
+    <string name="passenger_notification_text">Пассажир ожидает тебя!</string>
+    <string name="action_to_converter">К конвертеру</string>
+    <string name="quit_confirm">Вы действительно хотите выйти?</string>
+    <string name="yes">да</string>
+    <string name="no">Нет</string>
+    <string name="stranger">путник</string>
+</resources>

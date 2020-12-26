@@ -8,10 +8,10 @@
     <string name="green">Green</string>
     <string name="traffic_lights_off">Traffic lights off</string>
     <string name="enter_your_name_hint">Enter your name</string>
-    <string name="about_passenger">I am a passenger\nAnd I ride, and I ride\nI ride through the city\'s backsides\nI see the stars come out of the sky\nYeah, they\'re bright in a hollow sky\nYou know it looks so good tonight</string>
+    <string name="about_passenger" translatable="false">I am a passenger\nAnd I ride, and I ride\nI ride through the city\'s backsides\nI see the stars come out of the sky\nYeah, they\'re bright in a hollow sky\nYou know it looks so good tonight</string>
     <string name="the_passenger">The Passenger</string>
     <string name="app_greeting">Welcome to my awesome app!</string>
-    <string name="action_passenger">@string/the_passenger</string>
+    <string name="action_passenger" translatable="false">@string/the_passenger</string>
     <string name="action_to_traffic_lights">To traffic lights</string>
     <string name="show_menu">Show menu</string>
     <string name="passenger_notification_text">The Passenger waiting you!</string>
